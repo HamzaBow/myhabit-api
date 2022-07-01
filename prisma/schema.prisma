@@ -16,6 +16,8 @@ model User {
   hash      String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  @@map("users")
 }
 
 model Habit {
@@ -23,6 +25,8 @@ model Habit {
   title     String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  @@map("habits")
 }
 
 model HabitGroup {
@@ -31,4 +35,6 @@ model HabitGroup {
   HabitIds   Int[]
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
+
+  @@map("habit_groups")
 }
