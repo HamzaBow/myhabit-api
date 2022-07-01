@@ -17,6 +17,8 @@ model User {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
+  habits     Habit[]
+
   @@map("users")
 }
 
@@ -25,6 +27,9 @@ model Habit {
   title     String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  userId Int
+  user   User @relation(fields: [userId], references: [id])
 
   @@map("habits")
 }
